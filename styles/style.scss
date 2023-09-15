@@ -1,7 +1,5 @@
-$bgColor: blue;
+@import "./reset.scss";
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: $bgColor;
+  background-color: #dce6d1;
 }
