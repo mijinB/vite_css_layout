@@ -1,9 +1,146 @@
 @import "./reset.scss";
 
+$grey: #d7dbdb;
+$brown: #362b2b;
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #bcbfbf;
+  color: $brown;
+  font-weight: 600;
+}
+
+.phone {
+  width: 480px;
+  height: 93%;
+  border-radius: 10px;
+  background-color: $grey;
+  box-shadow: 5px 10px 10px rgba($color: #000, $alpha: 0.5);
+}
+
+.header {
+  padding: 50px 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header__btn {
+    position: relative;
+
+    .btn__hamburger-menu {
+      position: absolute;
+      top: -2px;
+      margin-left: 8px;
+    }
+  }
+
+  .header__title {
+    padding-left: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 23px 15px;
+  background-color: $brown;
+  color: $grey;
+  line-height: 1.2;
+
+  .total__price {
+    font-size: 24px;
+  }
+
+  .total__subtitle {
+    font-size: 14px;
+    ;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid $brown;
+  background-color: #c6caca;
+
+  .items__item {
+    position: relative;
+    border-top: 3px solid $brown;
+    background-color: $grey;
+
+    .item__info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+      padding: 23px 15px;
+
+      .info__col {
+        display: flex;
+        flex-direction: column;
+
+
+        &:nth-child(2) {
+          align-items: flex-end;
+        }
+      }
+
+      .col__title {
+        font-size: 42px;
+        line-height: 0.8;
+      }
+
+      .col__subtitle {
+        margin-top: 6px;
+        font-size: 16px;
+      }
+
+      .col__total-price {
+        margin-top: 10px;
+        font-size: 36px;
+        line-height: 0.4;
+      }
+
+      .col__piece-price {
+        margin-top: 15px;
+        font-size: 17px;
+      }
+    }
+
+    .item__specs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 3px solid $brown;
+      border-bottom: 3px solid $brown;
+
+      .specs__col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 25px 20px;
+        font-size: 14px;
+
+        &:nth-child(1) {
+          border-right: 3px solid $brown;
+        }
+      }
+    }
+
+    .item__photo {
+      position: absolute;
+      right: 15px;
+      bottom: 0px;
+      width: 219px;
+      height: 70%;
+      border: 3px solid $brown;
+      object-fit: cover;
+    }
+  }
 }
