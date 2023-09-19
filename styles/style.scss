@@ -1,1 +1,46 @@
 @import "./reset.scss";
+
+body {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 50px 1fr 50px;
+  height: 100vh;
+
+  .bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &:first-child {
+      grid-column: span 3;
+    }
+
+    &:last-child {
+      grid-column: span 3;
+    }
+
+    &:nth-child(2) span {
+      transform: rotateZ(-90deg);
+    }
+
+    &:nth-child(4) span {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  .main {
+    background-color: aquamarine;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .main__big-block {
+      height: 500vh;
+      background-color: yellow;
+    }
+  }
+}
