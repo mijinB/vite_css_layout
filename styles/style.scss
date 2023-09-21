@@ -4,6 +4,15 @@ $bg: #f0f0f0;
 $accent: #c7c2cc;
 $borderWidth: 2px;
 
+@keyframes slide {
+  0%{
+    transform: translateY(-3000%) rotateZ(90deg);
+  }
+  100%{
+    transform: translateY(calc(0% + 62px)) rotateZ(90deg);
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -89,7 +98,7 @@ body {
       color: white;
       font-size: 20px;
       font-weight: 900;
-      transform: rotateZ(90deg);
+      animation: slide 5s linear infinite;
     }
   }
 
