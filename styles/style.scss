@@ -1,1 +1,84 @@
 @import "./reset.scss";
+
+$green: #01ff00;
+$grey: #d9d9d9;
+$lightGrey: #f0f0f0;
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  grid-template-rows: 40px 1fr 40px;
+}
+
+main {
+  background-color: black;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $green;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    width: max-content;
+  }
+
+  .corner {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $green;
+    font-size: 17px;
+  }
+
+  &:first-child {
+    grid-column: span 3;
+
+    .corner:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .corner:nth-child(2) {
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    span {
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  &:nth-child(4) {
+    span {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  &:last-child {
+    grid-column: span 3;
+
+    span {
+      transform: rotateZ(180deg);
+    }
+
+    .corner:nth-child(1) {
+      bottom: 0;
+      left: 0;
+    }
+    .corner:nth-child(2) {
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
