@@ -198,7 +198,21 @@ body {
     }
 
     >div:last-child {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
       background-color: $grey;
+      overflow: hidden;
+      .line {
+        position: relative;
+        top: -5px;
+        width: 1000%;
+        height: 50%;
+        border-bottom: 1px solid black;
+        transform: rotate(30.5deg);
+      }
     }
   }
 
